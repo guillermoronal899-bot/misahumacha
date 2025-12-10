@@ -25,10 +25,10 @@ canvas {
 }
 
 button {
-  padding: 100px 200px;
+  padding: 99px 200px;
   background: #ff4d88;
   border: none;
-  border-radius: 100px;
+  border-radius: 99px;
   color: white;
   font-weight: bold;
   cursor: pointer;
