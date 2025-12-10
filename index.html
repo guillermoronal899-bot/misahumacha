@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galaxia de Amor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="overlay">
+    <h1>Para mi saumacha preferida  ✨❤️</h1>
+    <p>Gracias por tu apoyo incondicional 🥰</p>
+    <button id="playBtn">PRECIONA</button>
+  </div>
+
+  <div id="messageContainer">
+    <h2 id="loveMessage">Te amo hasta la última estrella 💫</h2>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    const overlay = document.querySelector('.overlay');
+    const playBtn = document.getElementById('playBtn');
+    const loveMessage = document.getElementById('loveMessage');
+
+    // Ocultamos el mensaje al inicio
+    loveMessage.style.opacity = '0';
+    loveMessage.style.transform = 'scale(0.8)';
+
+    // Función al presionar el botón
+    function showMessage() {
+      // Oculta el overlay y el botón
+      overlay.classList.add('hidden');
+
+      // Aparece el mensaje
+      loveMessage.style.transition = 'opacity 2s ease, transform 1s ease';
+      loveMessage.style.opacity = '1';
+      loveMessage.style.transform = 'scale(1)';
+
+      // Agregar latido después de aparecer
+      setTimeout(() => {
+        loveMessage.classList.add('pulse');
+      }, 2000);
+    }
+
+    playBtn.addEventListener('click', showMessage);
+  </script>
+</body>
+</html>

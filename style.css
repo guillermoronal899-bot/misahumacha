@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  background: #070714;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Fondo inicial */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  transition: opacity 1s ease;
+}
+
+button {
+  padding: 100px 200px;
+  background: #ff4d88;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#messageContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 20;
+}
+
+#loveMessage {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0;
+  color: #ff4d88;
+  text-shadow: 0 0 10px #ff80a1, 0 0 25px #ff4d88;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+#loveMessage.show {
+  opacity: 1;
+  transform: scale(1.05);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Animación de latido suave */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #ff80a1, 0 0 25px #ff4d88;
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 25px #ff4d88, 0 0 40px #ff99b8;
+  }
+}
